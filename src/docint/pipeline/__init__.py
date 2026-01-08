@@ -14,10 +14,13 @@ Each stage is independent and can be run separately or
 orchestrated through the main pipeline.
 """
 
+from .stage_cont import ContinuationDetector, find_continuation_groups
+from .stage_htr import HandwritingRecognizer, TrOCREngine
 from .stage_layout import LayoutDetector, LayoutDetectorConfig
 from .stage_ocr import OCRProcessor, TesseractOCR
 from .stage_orient import OrientationDetector, correct_orientation
 from .stage_render import PDFRenderer
+from .stage_table import TableExtractor, TableTransformerExtractor
 
 __all__ = [
     # Render
@@ -28,7 +31,16 @@ __all__ = [
     # Orientation
     "OrientationDetector",
     "correct_orientation",
-    # OCR
+    # OCR (Printed Text)
     "OCRProcessor",
     "TesseractOCR",
+    # HTR (Handwriting)
+    "HandwritingRecognizer",
+    "TrOCREngine",
+    # Table Extraction
+    "TableExtractor",
+    "TableTransformerExtractor",
+    # Continuation Detection
+    "ContinuationDetector",
+    "find_continuation_groups",
 ]
