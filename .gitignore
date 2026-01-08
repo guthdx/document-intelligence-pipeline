@@ -62,20 +62,18 @@ logs/
 *.db
 *.sqlite3
 
-# ML Models (download separately)
-models/
+# ML Models (download separately, top-level only)
+/models/
 *.pt
 *.pth
 *.onnx
 *.bin
 
-# Document processing outputs
-output/
-renders/
-*.png
-*.jpg
-*.jpeg
-*.tiff
+# Document processing outputs (top-level only)
+/output/
+/renders/
+# Note: Image files in processing directories will be in /output/ or /renders/
+# Not ignoring *.png globally to allow test fixtures
 
 # Jupyter
 .ipynb_checkpoints/
