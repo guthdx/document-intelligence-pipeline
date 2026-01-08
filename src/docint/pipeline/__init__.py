@@ -14,8 +14,21 @@ Each stage is independent and can be run separately or
 orchestrated through the main pipeline.
 """
 
+from .stage_layout import LayoutDetector, LayoutDetectorConfig
+from .stage_ocr import OCRProcessor, TesseractOCR
+from .stage_orient import OrientationDetector, correct_orientation
 from .stage_render import PDFRenderer
 
 __all__ = [
+    # Render
     "PDFRenderer",
+    # Layout
+    "LayoutDetector",
+    "LayoutDetectorConfig",
+    # Orientation
+    "OrientationDetector",
+    "correct_orientation",
+    # OCR
+    "OCRProcessor",
+    "TesseractOCR",
 ]
